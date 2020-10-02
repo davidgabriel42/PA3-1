@@ -125,7 +125,7 @@ void initPop(POPULATION *p)
       pi->chrom[j] = flip(0.5); 
       /*      fprintf(stdout, "%1i", pi->chrom[j]); */
     }
-    printf("check1");
+//    printf("check1");
     pi->fitness  = eval(p, pi);
 
 

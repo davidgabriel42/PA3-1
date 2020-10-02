@@ -3,7 +3,7 @@
 */
 #include <stdio.h>
 #include "type.h"
-
+#include <stdlib.h>
 #define RANCONST 1.0E-9
 
 
@@ -75,13 +75,14 @@ double f_random()
 
 void randomize(POPULATION *p)  /* Get seed number for random and start it up */
 {
-  int err;
-  err = printf("Enter seed random number (0.0..1.0) > "); 
-  err = scanf("%lf",&p->randomseed);
-  while ( p->randomseed < 0.0 || p->randomseed > 1.0){
-    err = printf("ERROR: Enter seed random number again (0.0..1.0) > ");
-    err = scanf("%lf\n",&p->randomseed);
-  }
+  //int err;
+  //err = printf("Enter seed random number (0.0..1.0) > "); 
+  //err = scanf("%lf",&p->randomseed);
+  p->randomseed = (double)rand() / (double)RAND_MAX ;
+  //while ( p->randomseed < 0.0 || p->randomseed > 1.0){
+  //  err = printf("ERROR: Enter seed random number again (0.0..1.0) > ");
+  //  err = scanf("%lf\n",&p->randomseed);
+  //}
 
 
   warmup_random(p->randomseed);
